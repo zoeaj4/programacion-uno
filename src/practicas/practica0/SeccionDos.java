@@ -56,11 +56,11 @@ Modificar el programa de dicho ejercicio para que utilice este método.
 			System.out.println("El promedio es: " + promedio + " está aprobado.");
 		} else {
 			System.out.println("El promedio es: " + promedio + " está desaprobado.");
-		}
-		
+		}		
 		input.close();
 	}
 	
+	// Ejercicio 9: Escribir un método static void imprimirFecha(int dia, int mes, int anio) que imprima la fecha pasada como parámetro en un formato del estilo “5 de Julio de 2030”.
 	static void imprimirFecha(int dia, int mes, int anio) {
 	    String nombreMes = "";
 
