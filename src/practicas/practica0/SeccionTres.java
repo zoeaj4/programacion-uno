@@ -80,6 +80,7 @@ public class SeccionTres {
 		System.out.println(cantCifras(900));
 		// ejercicio 15
 		System.out.println(esDivisible(10,6));
+		
 	}
 
 }
