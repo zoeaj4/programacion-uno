@@ -4,7 +4,7 @@ package practicas.practica0;
  * */
 public class SeccionSeis {
 	
-	// Ejercicio 30
+	// Ejercicio 30: Escribir las versiones recursivas de los métodos de la Sección 3.
 	static int sumatoriaRec(int n) {
 		if (n == 0) {
 			return 0;
@@ -12,7 +12,6 @@ public class SeccionSeis {
 		return n + sumatoriaRec(n-1);
 	}
 	
-	// Ejercicio 31
 	static int sumatoriaParesRec(int n) {
 		if (n == 0) {
 			return 0;
@@ -23,12 +22,29 @@ public class SeccionSeis {
 			return sumatoriaParesRec(n-1);
 		}
 	}
-
+	
+	static double potenciaRec(double x, int n) {
+	    if (n == 0) {
+	        return 1;
+	    }
+	    return x * potenciaRec(x, n - 1);
+	}
+	
+	static int factorialRec(int n) {
+		if (n == 0) {
+			return 1;
+		}
+		return n * factorialRec(n-1);
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// ejercicio 30
 		System.out.println(sumatoriaRec(8));
 		System.out.println(sumatoriaParesRec(4));
+		System.out.println(potenciaRec(4,2));
+		System.out.println(factorialRec(4));
 	}
 
 }
