@@ -37,7 +37,7 @@ public class SeccionSeis {
 		return n * factorialRec(n-1);
 	}
 	
-	// ejercicio 31: sucesión de Fibonacci.
+	// Ejercicio 31: sucesión de Fibonacci.
 	static int fibonacciRec(int n) {
 		if (n==0) return 0;
 		if (n==1) return 1;
@@ -60,7 +60,7 @@ public class SeccionSeis {
 	    return actual;
 	}
 	
-	// ejercicio 32: Collatz
+	// Ejercicio 32: Collatz
 	static void collatz(int n) {
 		System.out.print(n + ", ");
 		if (n==1) {
@@ -73,7 +73,7 @@ public class SeccionSeis {
 	    }
 	}
 	
-	// ejercicio 33: algoritmo de Euclides
+	// Ejercicio 33: algoritmo de Euclides
 	static int mcd(int a, int b) {
 	    if (b == 0) {
 	        return a;
@@ -81,7 +81,7 @@ public class SeccionSeis {
 	    return mcd(b, a % b);
 	}
 	
-	// ejercicio 34: Escribir una función que tome una cadena como par´ametro y la imprima por consola intercalando un ’∗’ entre cada letra. Por ejemplo, si la función toma la cadena ”hola” como parámetro, deberá imprimir ”h∗o∗l∗a”. Se puede dar por hecha la función static String resto(String s) que devuelve una cadena igual a s pero sin su primer caracter.
+	// Ejercicio 34: Escribir una función que tome una cadena como par´ametro y la imprima por consola intercalando un ’∗’ entre cada letra. Por ejemplo, si la función toma la cadena ”hola” como parámetro, deberá imprimir ”h∗o∗l∗a”. Se puede dar por hecha la función static String resto(String s) que devuelve una cadena igual a s pero sin su primer caracter.
 	
 	static String resto(String s) {
 	    if (s.length() <= 1) return "";
@@ -93,24 +93,26 @@ public class SeccionSeis {
 		return s.charAt(0) + "*" + palabraEntreAsteriscos(resto(s));
 	}
 	
+	// Ejercicio 35: Escribir una función que tome una cadena como parámetro y devuelva otra sin caracteres repetidos contiguos
+	
 	static String sinRepetidos(String s) {
-		if (s.length() <= 1) return s;
-		char primero = s.charAt(0);
-		char segundo = resto(s).charAt(0);
-		
-		if (primero == segundo) {
-			return sinRepetidos(resto(s));
-		} else {
-			return primero + sinRepetidos(resto(s));
-		}
-		
+	    if (s.length() <= 1) return s;
+
+	    char primero = s.charAt(0);
+	    char segundo = resto(s).charAt(0);
+
+	    if (primero == segundo) {
+	        return sinRepetidos(resto(s));
+	    } else {
+	        return primero + sinRepetidos(resto(s));
+	    }
 	}
 	
 	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		/*
+		
 		// ejercicio 30
 		System.out.println(sumatoriaRec(8));
 		System.out.println(sumatoriaParesRec(4));
@@ -125,8 +127,9 @@ public class SeccionSeis {
 		System.out.println(mcd(36,20));
 		// ejercicio 34
 		System.out.println(resto("hola"));
-		System.out.println(palabraEntreAsteriscos("hola"));*/
+		System.out.println(palabraEntreAsteriscos("hola"));
 		// ejercicio 35
+		System.out.println(sinRepetidos("gggeeeeeuddddduu"));
 	}
 
 }
