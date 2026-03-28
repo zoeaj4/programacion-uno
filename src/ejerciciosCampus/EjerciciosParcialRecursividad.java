@@ -66,19 +66,16 @@ public class EjerciciosParcialRecursividad {
 		//si es una vocal tras otra
 		if ((esVocal(primero)==true) && (esVocal(segundo)==true)) {
 			return "" + primero + primero +  repetirLetras(resto(s));
-		
 		}
 		
 		// si es una consonante tras otra
 		if ((esVocal(primero)==false) && (esVocal(segundo)==false)) {
 			return "" + primero + primero + primero + repetirLetras(resto(s));
 		}
-		
 		return "" + primero + repetirLetras(resto(s));
-		
 	}
 	
-	// Ejercicio 4: 
+	// Ejercicio 4: Escribir una función String subcadena (String s, int desde, int hasta) qu edada una cadena s y dos enteros desde y hasta, retorna una subcadena de s tomando los caracteres desde la posicion de desde y hasta la posición hasta inclusive.
 	static String subcadena(String s, int desde, int hasta) {
 	    if (s.equals("") || hasta < 0) {
 	        return "";
@@ -91,8 +88,23 @@ public class EjerciciosParcialRecursividad {
 	    return s.charAt(0) + "" + subcadena(resto(s), desde - 1, hasta - 1);
 		}
 	
-	
-	
+	// Ejercicio 5: Escribir una función boolean comienzaCon(String s1, String s2) que dadas dos cadenas s1 y s2 retorna verdadero si la cadena s2 comienza con la cadena s1, falso en caso contrario.
+	static boolean comienzaCon(String s1, String s2) {
+		 if (s1.equals("")) {
+			 return true;
+		 }
+		 
+		 if (s2.length()==1) {
+			 return false;
+		 }
+		 
+		 if (s1.charAt(0)!=s2.charAt(0)) {
+			 return false;
+		 }
+		 
+		 return comienzaCon(resto(s1), resto(s2));
+		 
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -100,10 +112,12 @@ public class EjerciciosParcialRecursividad {
 		System.out.println(espejar("hola"));
 		// Ejercicio 2:
 		System.out.println(estaPrimera("zoe","gabi"));
-		// 
-		System.out.println(esVocal('a'));
+		// Ejercicio 3:
 		System.out.println(repetirLetras("abcde"));
+		// Ejercicio 4:
 		System.out.println(subcadena("licenciado",3, 7));
+		// Ejercicio 5:
+		System.out.println(comienzaCon("sol", "solamente"));
 
 	}
 
