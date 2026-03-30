@@ -94,7 +94,7 @@ public class EjerciciosParcialRecursividad {
 			 return true;
 		 }
 		 
-		 if (s2.length()==1) {
+		 if (s2.equals("")) {
 			 return false;
 		 }
 		 
@@ -105,6 +105,8 @@ public class EjerciciosParcialRecursividad {
 		 return comienzaCon(resto(s1), resto(s2));
 		 
 	}
+	
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
