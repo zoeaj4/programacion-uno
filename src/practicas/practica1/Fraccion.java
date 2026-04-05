@@ -42,6 +42,7 @@ public class Fraccion {
 		//fraccion.invertir();
 		//fraccion.imprimir();
 		System.out.println(fraccion.aDouble());
+		
 	}
 
 }
