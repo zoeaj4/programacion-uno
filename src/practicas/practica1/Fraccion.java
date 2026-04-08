@@ -32,6 +32,24 @@ public class Fraccion {
 		return (double) numerador / denominador;
 	}
 	
+	// f
+	void reducir() {
+	    int a = Math.abs(numerador);
+	    int b = Math.abs(denominador);
+
+	    while (b != 0) {
+	        int temp = b;
+	        b = a % b;
+	        a = temp;
+	    }
+
+	    int mcd = a;
+
+	    numerador /= mcd;
+	    denominador /= mcd;
+
+	}
+	
 	
 	int numerador;
 	int denominador;
