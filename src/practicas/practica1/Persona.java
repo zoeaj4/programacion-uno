@@ -42,6 +42,16 @@ public class Persona {
 		}
 		return masJoven;
 	}
+	static Persona buscar(Persona[] grupo, String nombre) {
+		for (int i = 0; i<grupo.length; i++) {
+			if (grupo[i].nombre.equals(nombre)) {
+				return grupo[i];
+			}
+		}
+		return null;
+	}
+	
+	
 	
 	String nombre;
 	int edad;
