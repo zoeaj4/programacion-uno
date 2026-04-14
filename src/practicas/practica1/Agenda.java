@@ -48,6 +48,24 @@ public class Agenda {
 		}
 	}
 	
+	boolean pertenece (Persona contacto) {
+		for (int i = 0; i < contactos.length; i++) {
+			if (contactos[i] != null && contacto.mismaPersona(contactos[i])) {
+				return true;
+			}		
+		}
+		return false;
+	}
+	
+	String dameTelefono(Persona contacto) {
+		for (int i = 0; i < contactos.length; i++) {
+			if (contactos[i] != null && contacto.mismaPersona(contactos[i])) {
+				return telefonos[i];
+			}
+		}
+		return null;
+	}
+	
 	Persona[] contactos;
 	String[] telefonos; 
 
