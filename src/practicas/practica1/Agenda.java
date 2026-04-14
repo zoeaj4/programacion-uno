@@ -38,6 +38,16 @@ public class Agenda {
 	    // divido por dos porque antes multipliqué por dos, esto me da el índice
 	}
 	
+	void eliminar(Persona contacto) {
+		for (int i = 0; i < contactos.length; i++) {
+			if (contactos[i]!=null && contacto.mismaPersona(contactos[i])) {
+				contactos[i] = null;
+				telefonos[i] = null;
+				return;
+			}
+		}
+	}
+	
 	Persona[] contactos;
 	String[] telefonos; 
 
