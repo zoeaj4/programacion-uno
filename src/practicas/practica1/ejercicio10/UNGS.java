@@ -148,7 +148,56 @@ public class UNGS {
 	}
 
 	// e
-	
+	int alumnosDe(Docente d) {
+	    
+	    Estudiante[] vistos = new Estudiante[1000]; // tamaño grande “por las dudas”
+	    int cantidad = 0;
+
+	    // Recorro comisiones
+	    for (int i = 0; i < comisiones.length; i++) {
+	        
+	        Comision c = comisiones[i];
+
+	        boolean dicta = false;
+
+	        // 1. Ver si el docente está en la comisión
+	        for (int j = 0; j < c.docentes.length; j++) {
+	            if (c.docentes[j] != null && c.docentes[j].equals(d)) {
+	                dicta = true;
+	                break;
+	            }
+	        }
+
+	        // 2. Si dicta, reviso estudiantes
+	        if (dicta) {
+	            for (int j = 0; j < c.inscriptos.length; j++) {
+	                
+	                Estudiante e = c.inscriptos[j];
+
+	                if (e != null) {
+	                    
+	                    boolean yaContado = false;
+
+	                    // 3. Ver si ya lo conté
+	                    for (int k = 0; k < cantidad; k++) {
+	                        if (vistos[k].equals(e)) {
+	                            yaContado = true;
+	                            break;
+	                        }
+	                    }
+
+	                    // 4. Si no estaba, lo agrego
+	                    if (!yaContado) {
+	                        vistos[cantidad] = e;
+	                        cantidad++;
+	                    }
+	                }
+	            }
+	        }
+	    }
+
+	    return cantidad;
+	}
 	
 	Comision[] comisiones;
 }
