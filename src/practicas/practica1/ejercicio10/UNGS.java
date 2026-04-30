@@ -114,5 +114,41 @@ public class UNGS {
 	    return mejor;
 	}
 	
+	int losMejores() {
+	    
+	    int total = 0;
+
+	    // Recorro todas las comisiones
+	    for (int i = 0; i < comisiones.length; i++) {
+	        
+	        Comision c = comisiones[i];
+
+	        int maxNota = -1;
+
+	        // 1. Buscar la nota máxima
+	        for (int j = 0; j < c.calificaciones.length; j++) {
+	            if (c.inscriptos[j] != null) {
+	                if (c.calificaciones[j] > maxNota) {
+	                    maxNota = c.calificaciones[j];
+	                }
+	            }
+	        }
+
+	        // 2. Contar cuántos tienen esa nota
+	        for (int j = 0; j < c.calificaciones.length; j++) {
+	            if (c.inscriptos[j] != null &&
+	                c.calificaciones[j] == maxNota) {
+	                
+	                total++;
+	            }
+	        }
+	    }
+
+	    return total;
+	}
+
+	// e
+	
+	
 	Comision[] comisiones;
 }
