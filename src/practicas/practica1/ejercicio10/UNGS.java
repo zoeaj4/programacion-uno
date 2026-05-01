@@ -199,5 +199,46 @@ public class UNGS {
 	    return cantidad;
 	}
 	
+	int unicaComision() {
+		String [] materiasVistas = new String [1000];
+		int cantVistas = 0;
+		int total = 0;
+		
+		// Recorre todas las comisiones
+		
+		for (int i = 0; i< comisiones.length; i++) {
+			String materia = comisiones[i].materia;
+			
+			// 1. Ver si procesé la materia
+			boolean yaVista = false;
+			for (int j = 0; j < cantVistas; j++) {
+				if (materiasVistas[j].equals(materia)) {
+					yaVista = true;
+					break;
+				}
+			}
+			
+			if (!yaVista) {
+				// la marco como vista
+				materiasVistas[cantVistas] = materia;
+				cantVistas++;
+				
+				// contar cuantas veces aparece
+				int contador = 0;
+				for (int k = 0; k < comisiones.length; k++) {
+					if (comisiones[k].materia.equals(materia)) {
+						contador++;
+					}
+				}
+			
+				if (contador  == 1) {
+					total++;
+				}
+			}
+		}
+		
+		return total;
+	}
+	
 	Comision[] comisiones;
 }
