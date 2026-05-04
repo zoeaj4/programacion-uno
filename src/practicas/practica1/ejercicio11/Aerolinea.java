@@ -99,4 +99,44 @@ capacidad del avi´on. */
         return false;
     }
 
+/* Escribir un método Tripulante pilotoDelMes() que devuelve el tripulante que mayor cantidad
+de vuelos haya piloteado. Se considera que un tripulante pilote´o un vuelo solo si su cargo en
+dicho vuelo fue el de “Piloto”. En caso de haber mas de un tripulante con estas caracterısticas,
+puede devolver cualquiera de ellos
+ */
+    Tripulante pilotoDelMes(){
+        Tripulante mejorPiloto = null;
+        int nuevoMaximo = -1;
+        
+        for (int i = 0; i<vuelos.length;i++){
+            for(int j = 0; j<vuelos[i].tripulacion.length;j++){
+                
+                if (vuelos[i].tripulacion[j].cargo.equals("Piloto")) {
+                int contador = contarVuelosComoPiloto(vuelos[i].tripulacion[j]);
+
+                if (mejorPiloto == null || contador>nuevoMaximo){
+                mejorPiloto = vuelos[i].tripulacion[j];
+                nuevoMaximo=contador;
+                }    
+                }
+                  
+            }
+        }
+        return mejorPiloto;
+    }
+
+    int contarVuelosComoPiloto(Tripulante t){
+    
+        int contadorDeViajes = 0;
+
+        for (int i = 0; i<vuelos.length;i++){            
+            for(int j = 0; j<vuelos[i].tripulacion.length;j++){
+                if ((vuelos[i].tripulacion[j].equals(t)) && (vuelos[i].tripulacion[j].cargo.equals("Piloto"))){
+                    contadorDeViajes++;
+                }  
+            }
+        }
+        return contadorDeViajes;
+    }
+
 }
