@@ -47,6 +47,7 @@ misma cantidad de inspectores, puede devolver cualquiera de ellos
      */
 
     Vuelo elMasInspeccionado(){
+        
         Vuelo elMas = vuelos[0];
         int maximo= 0;
 
@@ -64,12 +65,38 @@ misma cantidad de inspectores, puede devolver cualquiera de ellos
                 }
 
             }
+        
             if (contadorInspector1>maximo) {
                 elMas=vuelos[i];
                 maximo=contadorInspector1;
             }
         }
         return elMas;
+    }
+
+    /*d) Escribir un m´etodo boolean hayVueloSobrecargado() que devuelve true cuando hay al menos
+un vuelo en el que la cantidad de tripulantes con cargo de “Aeromozo” supere el 10 % de la
+capacidad del avi´on. */
+
+    boolean hayVueloSobrecargado(){
+        for (int i = 0; i<vuelos.length;i++){
+            int contador = 0;
+
+            for (int j = 0; j<vuelos[i].tripulacion.length;j++){
+                if (vuelos[i].tripulacion[j].cargo.equals("Aeromozo")){
+                    contador++;
+                }   
+            }
+
+            double diezPorcientoTripulacion = vuelos[i].avion.capacidad * 0.10;
+            
+            if (contador>diezPorcientoTripulacion){
+                return true;
+            }
+
+        }
+        
+        return false;
     }
 
 }
